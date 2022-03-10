@@ -14,6 +14,7 @@ public class Aula {
         this.numero = numero;
         this.sumario ="";
         this.professor = null;
+        this.alunos = new LinkedList<>();
     }
 
     //metodos
@@ -25,7 +26,7 @@ public class Aula {
 
     }
 
-    public void adicionarLinhaSumario(String sumario){
+    public void adicionarLinhaSumario(String linha){
 
     }
 }

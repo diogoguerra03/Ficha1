@@ -1,0 +1,32 @@
+Professor:
+	- Caracteristicas:
+		- nome -> String
+		- numero -> long
+		- aulas -> LinkedList<Aula>
+		
+	- Funcionalidades:
+		- adicionar(Aula): void
+		- preencherSumario(Aula): void
+		
+Aluno:
+	- Caracteristicas:
+		- nome -> String
+		- numero -> long
+		- aulas -> LinkedList<Aula>
+		
+	- Funcionalidades:
+		- adicionar(Aula): void
+		- preencherSumario(Aula): void
+
+Aula:
+	- Caracteristicas:
+		- nome -> String
+		- numero -> long
+		- sumario -> String
+		- professor -> Professor
+		- alunos -> LinkedList<Aluno>
+		
+	-Funcionalidades:
+		- atribuir(Professor): void
+		- adicionar(Aluno): void
+		- adicionarLinhaSumario(String): void

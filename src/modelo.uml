@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>C:/Users/diogo/OneDrive/Ambiente de Trabalho/IPL/P2/Fichas/Ficha1/src</OriginalElement>
+  <nodes>
+    <node x="-262.0" y="-36.0">Professor</node>
+    <node x="133.0" y="121.0">Aula</node>
+    <node x="0.0" y="121.0">Aluno</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="true" x="105.5" y="75.0" />
+  <SelectedNodes>
+    <node>Professor</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

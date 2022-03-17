@@ -20,6 +20,22 @@ public class Aluno {
 
     }
 
+    public void remover(Aula aula){
+
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public long getNumero() {
+        return numero;
+    }
+
+    public void setNumero(long numero) {
+        this.numero = numero;
+    }
+
     public void preencherSumario(Aula aula){
 
     }

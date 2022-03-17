@@ -16,8 +16,38 @@ public class Professor {
     }
 
     //Métodos
-    public void adicionar(Aula aula){
+    //acessores
+    public String getNome(){
+        return nome;
+    }
 
+    public void setNumero(long numero) {
+        this.numero = numero;
+    }
+
+    public long getNumero() {
+        return numero;
+    }
+
+    //funcionalidades
+    public void adicionar(Aula aula){
+        if (aula == null || this.aulas.contains(aula)){
+            return;
+        }
+        //adicionar a aula à lista de aulas
+        this.aulas.add(aula);
+        //atribuir o professor à aula
+        aula.setProfessor(this);
+    }
+
+    public void remover(Aula aula){
+        if (/*aula == null ||*/ !this.aulas.contains(aula)){
+            return;
+        }
+        //remover a aula da lista
+        this.aulas.remove(aula);
+        //desassociar o professor da aula
+        aula.desassociarProfessor();
     }
 
     public void preencherSumario(Aula aula){

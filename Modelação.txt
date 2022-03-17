@@ -1,32 +1,32 @@
-Professor:
+modelo.Professor:
 	- Caracteristicas:
 		- nome -> String
 		- numero -> long
-		- aulas -> LinkedList<Aula>
+		- aulas -> LinkedList<modelo.Aula>
 		
 	- Funcionalidades:
-		- adicionar(Aula): void
-		- preencherSumario(Aula): void
+		- adicionar(modelo.Aula): void
+		- preencherSumario(modelo.Aula): void
 		
-Aluno:
+modelo.Aluno:
 	- Caracteristicas:
 		- nome -> String
 		- numero -> long
-		- aulas -> LinkedList<Aula>
+		- aulas -> LinkedList<modelo.Aula>
 		
 	- Funcionalidades:
-		- adicionar(Aula): void
-		- preencherSumario(Aula): void
+		- adicionar(modelo.Aula): void
+		- preencherSumario(modelo.Aula): void
 
-Aula:
+modelo.Aula:
 	- Caracteristicas:
 		- nome -> String
 		- numero -> long
 		- sumario -> String
-		- professor -> Professor
-		- alunos -> LinkedList<Aluno>
+		- professor -> modelo.Professor
+		- alunos -> LinkedList<modelo.Aluno>
 		
 	-Funcionalidades:
-		- atribuir(Professor): void
-		- adicionar(Aluno): void
+		- atribuir(modelo.Professor): void
+		- adicionar(modelo.Aluno): void
 		- adicionarLinhaSumario(String): void

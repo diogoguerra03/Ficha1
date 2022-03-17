@@ -3,30 +3,31 @@
   <ID>JAVA</ID>
   <OriginalElement>C:/Users/diogo/OneDrive/Ambiente de Trabalho/IPL/P2/Fichas/Ficha1/src</OriginalElement>
   <nodes>
-    <node x="16.0" y="452.0">Professor</node>
-    <node x="0.0" y="193.0">Aula</node>
-    <node x="16.0" y="0.0">Aluno</node>
+    <node x="16.0" y="452.0">modelo.Aluno</node>
+    <node x="16.0" y="0.0">modelo.Professor</node>
+    <node x="282.0" y="0.0">Main</node>
+    <node x="0.0" y="193.0">modelo.Aula</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="Aula" target="Professor" relationship="TO_ONE">
-      <point x="0.0" y="104.5" />
-      <point x="0.0" y="-71.5" />
+    <edge source="modelo.Aula" target="modelo.Professor" relationship="TO_ONE">
+      <point x="0.0" y="-104.5" />
+      <point x="0.0" y="71.5" />
     </edge>
-    <edge source="Professor" target="Aula" relationship="TO_MANY">
-      <point x="0.0" y="-71.5" />
-      <point x="0.0" y="104.5" />
-    </edge>
-    <edge source="Aluno" target="Aula" relationship="TO_MANY">
+    <edge source="modelo.Professor" target="modelo.Aula" relationship="TO_MANY">
       <point x="0.0" y="71.5" />
       <point x="0.0" y="-104.5" />
     </edge>
-    <edge source="Aula" target="Aluno" relationship="TO_MANY">
-      <point x="0.0" y="-104.5" />
-      <point x="0.0" y="71.5" />
+    <edge source="modelo.Aula" target="modelo.Aluno" relationship="TO_MANY">
+      <point x="0.0" y="104.5" />
+      <point x="0.0" y="-71.5" />
+    </edge>
+    <edge source="modelo.Aluno" target="modelo.Aula" relationship="TO_MANY">
+      <point x="0.0" y="-71.5" />
+      <point x="0.0" y="104.5" />
     </edge>
   </edges>
-  <settings layout="Hierarchic" zoom="1.0" showDependencies="true" x="118.5" y="297.5" />
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="true" x="216.0" y="297.5" />
   <SelectedNodes />
   <Categories>
     <Category>Fields</Category>

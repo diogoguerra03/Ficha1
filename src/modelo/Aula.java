@@ -6,17 +6,33 @@ public class Aula {
     //atributos
     private String nome;
     private long numero;
-    private String sumario;
+    private StringBuilder sumario;
     private Professor professor;
     private LinkedList<Aluno> alunos;
 
     //construtor
     public Aula(String nome, long numero){
-        this.nome = nome;
+        this(nome, numero, null, new LinkedList<>());
+        /*this.nome = nome;
         this.numero = numero;
-        this.sumario ="";
+        //this.sumario ="";
+        this.sumario = new StringBuilder();
         this.professor = null;
         this.alunos = new LinkedList<>();
+         */
+    }
+
+    public Aula(String nome, long numero, Professor professor, LinkedList<Aluno> alunos){
+        this.nome = nome;
+        this.numero = numero;
+        this.sumario = new StringBuilder();
+        //this.professor = professor;
+        setProfessor(professor);
+        //this.alunos = alunos;
+        this.alunos = new LinkedList<>();
+        for (Aluno aluno: alunos){
+            adicionar(aluno);
+        }
     }
 
     //metodos
@@ -34,7 +50,8 @@ public class Aula {
     }
 
     public String getSumario() {
-        return sumario;
+        //return sumario;
+        return sumario.toString();
     }
 
     public Professor getProfessor() {
@@ -78,7 +95,7 @@ public class Aula {
     }
 
     public void remover(Aluno aluno){
-        if (alunos.contains(aluno)){
+        if (!alunos.contains(aluno)){
             return;
         }
         alunos.remove(aluno);
@@ -99,6 +116,12 @@ public class Aula {
     }
 
     public void adicionarLinhaSumario(String linha){
+        //sumario = sumario + linha + "\n";
+       /* StringBuilder sb = new StringBuilder(sumario);
+        sb.append(linha).append("\n");
 
+        sumario = sb.toString();
+        */
+        sumario.append(linha).append("\n");
     }
 }

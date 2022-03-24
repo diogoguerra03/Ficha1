@@ -51,6 +51,20 @@ public class Professor {
     }
 
     public void preencherSumario(Aula aula){
-
+        //se não tiver a aula na lista não posso preencher sumario
+        if (!aulas.contains(aula)){
+            return;
+        }
+        //adicionar o nome da aula
+        aula.adicionarLinhaSumario(aula.getNome());
+        //adicionar o numero da aula
+        aula.adicionarLinhaSumario(String.valueOf(aula.getNumero()));
+        //assinar com o nome do professor
+        aula.adicionarLinhaSumario(nome);
+        //dar aos alunos a preencher o sumario
+        //percorrer a lsta de alunos da aula
+        for (Aluno aluno : aula.getAlunos()){
+            aluno.preencherSumario(aula);
+        }
     }
 }

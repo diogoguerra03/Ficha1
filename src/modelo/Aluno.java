@@ -32,7 +32,7 @@ public class Aluno {
         }
         //remover a aula da lista
         this.aulas.remove(aula);
-        //remover aluno da aula
+        //remover este aluno da aula
         aula.remover(this);
     }
 
@@ -49,6 +49,10 @@ public class Aluno {
     }
 
     public void preencherSumario(Aula aula){
-
+        if (!aulas.contains(aula)){
+            return;
+        }
+        //assinar o sumario
+        aula.adicionarLinhaSumario(nome);
     }
 }

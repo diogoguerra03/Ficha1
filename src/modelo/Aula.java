@@ -78,15 +78,23 @@ public class Aula {
     }
 
     public void remover(Aluno aluno){
+        if (alunos.contains(aluno)){
+            return;
+        }
+        alunos.remove(aluno);
+        aluno.remover(this);
+    }
 
+    public void adicionar(Aluno aluno){
+        if(aluno == null || alunos.contains(aluno)){
+            return;
+        }
+        alunos.add(aluno);
+        aluno.adicionar(this);
     }
 
     //funcionalidades
     public void atribuir(Professor professor){
-
-    }
-
-    public void adicionar(Aluno aluno){
 
     }
 

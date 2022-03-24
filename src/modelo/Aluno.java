@@ -17,11 +17,23 @@ public class Aluno {
 
     //Metodos
     public void adicionar(Aula aula){
-
+        if (aula == null || this.aulas.contains(aula)){
+            return;
+        }
+        //adicionar a aula à lista de aulas
+        this.aulas.add(aula);
+        //adicionar aluno
+        aula.adicionar(this);
     }
 
     public void remover(Aula aula){
-
+        if (!this.aulas.contains(aula)){
+            return;
+        }
+        //remover a aula da lista
+        this.aulas.remove(aula);
+        //remover aluno da aula
+        aula.remover(this);
     }
 
     public String getNome() {

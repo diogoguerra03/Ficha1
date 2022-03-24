@@ -55,12 +55,10 @@ public class Main {
         alunos.add(aluno1);
         alunos.add(aluno2);
         //testar o overloading de métodos através do novo construtor da classe Aula
-     /*   Aula aula3 = new Aula("Programação 2 PL3", 3, professor3, alunos);
+        Aula aula3 = new Aula("Programação 2 PL3", 3, professor3, alunos);
         professor3.preencherSumario(aula3);
         //apresentar o sumário da aula3
         System.out.println(aula3.getSumario());
-
-      */
     }
 
     public static void main(String[] args) {

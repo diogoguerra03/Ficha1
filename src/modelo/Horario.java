@@ -26,4 +26,20 @@ public class Horario {
         return duracao;
     }
 
+    public boolean isSobre(Horario horario){
+        int horaFimThis = this.horaDeInicio + this.duracao;
+        int horaFimHorario = horario.horaDeInicio + horario.duracao;
+
+        /*if(this.diaSemana == horario.diaSemana &&
+                horaFimHorario > this.horaDeInicio &&
+                horaFimThis > horario.horaDeInicio){
+            return true;
+        }
+        return false;
+         */
+
+        return this.diaSemana == horario.diaSemana &&
+                horaFimHorario > this.horaDeInicio &&
+                horaFimThis > horario.horaDeInicio;
+    }
 }

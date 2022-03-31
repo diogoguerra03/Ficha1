@@ -1,7 +1,4 @@
-import modelo.Aluno;
-import modelo.Aula;
-import modelo.DiaSemana;
-import modelo.Professor;
+import modelo.*;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -24,11 +21,11 @@ public class Main {
         alunos.add(aluno1);
         alunos.add(aluno2);
 
-        /*
+
         Aula aula1 = new Aula("Programação 2 TP1", 1, new Horario(DiaSemana.SEGUNDA_FEIRA, 8, 2), professor1, alunos);
         Aula aula2 = new Aula("Programação 2 PL1", 1, new Horario(DiaSemana.TERCA_FEIRA, 11, 3));
         Aula aula3 = new Aula("Programação 2 PL2", 1, new Horario(DiaSemana.TERCA_FEIRA, 15, 3));
-
+/*
         aula2.setProfessor(professor2);
         aula2.adicionar(aluno1);
 

@@ -1,5 +1,6 @@
 package modelo;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Professor {
@@ -30,11 +31,26 @@ public class Professor {
     }
 
     public LinkedList<Aula> getAulas() {
-        return aulas;
+        //return aulas
+        return new LinkedList<>(aulas);
     }
 
     public LinkedList<Aula> getAulas(Horario horario) {
-        return new LinkedList<>(aulas);
+        //criar uma nova lista auxiliar
+        LinkedList<Aula> listAuxiliar = new LinkedList<>();
+
+        for (Aula aula : this.aulas){ //percorrer todas as aulas
+            //para cada aula
+            if(aula.getHorario().isSobre(horario)){
+
+            }
+                //comparar os horarios
+                //se horarios sobrepostos
+                    //adicionar à nova lista
+
+        }
+        //devolver uma lista de aulas
+        return listAuxiliar;
     }
 
     //funcionalidades

@@ -30,7 +30,7 @@ public class Aluno {
     }
 
     public LinkedList<Aula> getAulas() {
-        return aulas;
+        return new LinkedList<>(aulas);
     }
 
     public LinkedList<Aula> getAulas(Horario horario) {

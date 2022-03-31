@@ -29,6 +29,14 @@ public class Professor {
         return numero;
     }
 
+    public LinkedList<Aula> getAulas() {
+        return aulas;
+    }
+
+    public LinkedList<Aula> getAulas(Horario horario) {
+        return new LinkedList<>(aulas);
+    }
+
     //funcionalidades
     public void adicionar(Aula aula){
         if (aula == null || this.aulas.contains(aula)){

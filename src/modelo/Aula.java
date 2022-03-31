@@ -9,10 +9,11 @@ public class Aula {
     private StringBuilder sumario;
     private Professor professor;
     private LinkedList<Aluno> alunos;
+    private Horario horario;
 
     //construtor
-    public Aula(String nome, long numero){
-        this(nome, numero, null, new LinkedList<>());
+    public Aula(String nome, long numero, Horario horario){
+        this(nome, numero, null, null, new LinkedList<>());
         /*this.nome = nome;
         this.numero = numero;
         //this.sumario ="";
@@ -22,15 +23,16 @@ public class Aula {
          */
     }
 
-    public Aula(String nome, long numero, Professor professor, LinkedList<Aluno> alunos){
+    public Aula(String nome, long numero, Horario horario, Professor professor, LinkedList<Aluno> alunos){
         this.nome = nome;
         this.numero = numero;
+        this.horario = horario;
         this.sumario = new StringBuilder();
         //this.professor = professor;
         setProfessor(professor);
         //this.alunos = alunos;
         this.alunos = new LinkedList<>();
-        for (Aluno aluno: alunos){
+        for (Aluno aluno: alunos) {
             adicionar(aluno);
         }
     }
@@ -94,6 +96,11 @@ public class Aula {
         return new LinkedList<>(alunos); //faz copia de segurança para não conseguirem manipular todos os alunos
     }
 
+    public Horario getHorario() {
+        return horario;
+    }
+
+    //funcionalidades
     public void remover(Aluno aluno){
         if (!alunos.contains(aluno)){
             return;
@@ -110,7 +117,6 @@ public class Aula {
         aluno.adicionar(this);
     }
 
-    //funcionalidades
     public void atribuir(Professor professor){
 
     }

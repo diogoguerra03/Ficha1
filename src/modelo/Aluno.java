@@ -15,6 +15,28 @@ public class Aluno {
         this.aulas = new LinkedList<>();
     }
 
+    //acessores
+
+    public String getNome() {
+        return nome;
+    }
+
+    public long getNumero() {
+        return numero;
+    }
+
+    public void setNumero(long numero) {
+        this.numero = numero;
+    }
+
+    public LinkedList<Aula> getAulas() {
+        return aulas;
+    }
+
+    public LinkedList<Aula> getAulas(Horario horario) {
+        return new LinkedList<>(aulas);
+    }
+
     //Metodos
     public void adicionar(Aula aula){
         if (aula == null || this.aulas.contains(aula)){
@@ -34,18 +56,6 @@ public class Aluno {
         this.aulas.remove(aula);
         //remover este aluno da aula
         aula.remover(this);
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public long getNumero() {
-        return numero;
-    }
-
-    public void setNumero(long numero) {
-        this.numero = numero;
     }
 
     public void preencherSumario(Aula aula){

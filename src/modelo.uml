@@ -1,36 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Diagram>
   <ID>JAVA</ID>
-  <OriginalElement>C:/Users/diogo/OneDrive/Ambiente de Trabalho/IPL/P2/Fichas/Ficha1/src</OriginalElement>
+  <OriginalElement />
   <nodes>
-    <node x="16.0" y="452.0">modelo.Aluno</node>
-    <node x="16.0" y="0.0">modelo.Professor</node>
-    <node x="282.0" y="0.0">Main</node>
-    <node x="0.0" y="193.0">modelo.Aula</node>
+    <node x="167.0" y="395.0">com</node>
+    <node x="185.0" y="321.0">images</node>
+    <node x="199.0" y="247.0">netscape</node>
+    <node x="0.0" y="469.0">org</node>
+    <node x="0.0" y="99.0">toolbarButtonGraphics</node>
+    <node x="0.0" y="321.0">modelo</node>
+    <node x="158.0" y="469.0">sun</node>
+    <node x="316.0" y="469.0">jdk</node>
+    <node x="0.0" y="247.0">META-INF</node>
+    <node x="239.0" y="173.0">groovyjarjarasm</node>
+    <node x="331.0" y="395.0">java</node>
+    <node x="366.0" y="321.0">groovy</node>
+    <node x="0.0" y="395.0">javax</node>
+    <node x="279.0" y="99.0">groovyjarjarpicocli</node>
+    <node x="195.0" y="0.0">groovyjarjarcommonscli</node>
+    <node x="0.0" y="173.0">groovyjarjarantlr</node>
+    <node x="0.0" y="0.0">Main</node>
   </nodes>
   <notes />
-  <edges>
-    <edge source="modelo.Aula" target="modelo.Professor" relationship="TO_ONE">
-      <point x="0.0" y="-104.5" />
-      <point x="0.0" y="71.5" />
-    </edge>
-    <edge source="modelo.Professor" target="modelo.Aula" relationship="TO_MANY">
-      <point x="0.0" y="71.5" />
-      <point x="0.0" y="-104.5" />
-    </edge>
-    <edge source="modelo.Aula" target="modelo.Aluno" relationship="TO_MANY">
-      <point x="0.0" y="104.5" />
-      <point x="0.0" y="-71.5" />
-    </edge>
-    <edge source="modelo.Aluno" target="modelo.Aula" relationship="TO_MANY">
-      <point x="0.0" y="-71.5" />
-      <point x="0.0" y="104.5" />
-    </edge>
-  </edges>
-  <settings layout="Hierarchic" zoom="1.0" showDependencies="true" x="216.0" y="297.5" />
+  <edges />
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="true" x="251.0" y="249.0" />
   <SelectedNodes />
   <Categories>
     <Category>Fields</Category>
+    <Category>Inner Classes</Category>
     <Category>Methods</Category>
   </Categories>
   <SCOPE>All</SCOPE>

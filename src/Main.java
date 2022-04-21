@@ -17,6 +17,8 @@ public class Main {
 
         professor1.adicionar(aula1);
         aluno1.adicionar(aula1);
+        professor1.preencherSumario(aula1);
+        System.out.println(aula1.getSumario());
     }
 
     public static void main(String[] args) {

@@ -12,57 +12,27 @@ public class Professor extends Pessoa {
         super(nome,numero);
     }
 
-    //Métodos
-    //acessores
-    /*public String getNome(){
-        return nome;
-    }
-
-    public void setNumero(long numero) {
-        this.numero = numero;
-    }
-
-    public long getNumero() {
-        return numero;
-    }
-
-     */
-
     //funcionalidades
     @Override
-    public void adicionar(Aula aula){
-        /* if (aula == null || this.aulas.contains(aula)){
-            return;
-        }
-        //adicionar a aula à lista de aulas
-        this.aulas.add(aula);
-         */
-        super.adicionar(aula);
-        //atribuir o professor à aula
+    public void associar(Aula aula) {
         aula.setProfessor(this);
     }
 
-    public void remover(Aula aula){
-        if (/*aula == null ||*/ !this.aulas.contains(aula)){
-            return;
-        }
-        //remover a aula da lista
-        this.aulas.remove(aula);
-        //desassociar o professor da aula
+    @Override
+    protected void desassociar(Aula aula) {
         aula.desassociarProfessor();
     }
 
-    public void preencherSumario(Aula aula){
-        //se não tiver a aula na lista não posso preencher sumario
-        if (!aulas.contains(aula)){
-            return;
-        }
+    @Override
+    protected void escreverSumario(Aula aula) {
         //adicionar o nome da aula
         aula.adicionarLinhaSumario(aula.getNome());
         //adicionar o numero da aula
         aula.adicionarLinhaSumario(String.valueOf(aula.getNumero()));
         //assinar com o nome do professor
-        aula.adicionarLinhaSumario(nome);
+        //aula.adicionarLinhaSumario(nome);
+        //super.assinarSumario(Aula);
+        assinarSumario(aula);
         //dar aos alunos a preencher o sumario
         //percorrer a lsta de alunos da aula
         for (Aluno aluno : aula.getAlunos()){

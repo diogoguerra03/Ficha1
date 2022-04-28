@@ -2,16 +2,11 @@ package modelo;
 
 import java.util.LinkedList;
 
-public class GabineteProfessor extends Descritor{
-    private boolean portaAberta;
+public class GabineteProfessor extends Divisao{
     private LinkedList<Professor> professores;
 
-    public GabineteProfessor(String nome) {
-        super(nome);
-    }
-
-    public boolean isPortaAberta(){
-        return portaAberta;
+    public GabineteProfessor(String nome, boolean portaAberta) {
+        super(nome, portaAberta);
     }
 
     public LinkedList<Professor> getProfessores(){
@@ -20,14 +15,6 @@ public class GabineteProfessor extends Descritor{
 
     public LinkedList<Professor> getProfessores(Horario horario){
         return null;
-    }
-
-    public void abrir(){
-
-    }
-
-    public void fechar(){
-
     }
 
     public void remover(Aula aula){

@@ -2,13 +2,12 @@ package modelo;
 
 import java.util.LinkedList;
 
-public class GabineteSeguranca {
-    private String nome;
+public class GabineteSeguranca extends Descritor{
     private boolean portaAberta;
     private LinkedList<Seguranca> segurancas;
 
-    public String getNome() {
-        return nome;
+    public GabineteSeguranca(String nome) {
+        super(nome);
     }
 
     public boolean isPortaAberta() {

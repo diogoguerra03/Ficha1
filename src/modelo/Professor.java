@@ -1,9 +1,10 @@
 package modelo;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 
-public class Professor extends Pessoa {
+public class Professor extends PessoaComAulas {
+    private GabineteProfessor gabinete;
+    private LinkedList<Horario> horariosAtendimento;
 
     //construtor(es)
     public Professor(String nome, long numero){
@@ -38,5 +39,37 @@ public class Professor extends Pessoa {
         for (Aluno aluno : aula.getAlunos()){
             aluno.preencherSumario(aula);
         }
+    }
+
+    public GabineteProfessor getGabinete() {
+        return gabinete;
+    }
+
+    public void setGabinete(GabineteProfessor gabinete) {
+        this.gabinete = gabinete;
+    }
+
+    public void desassociarGabinete(){
+
+    }
+
+    public LinkedList<Horario> getHorarioAtendimento(){
+        return new LinkedList<>(horariosAtendimento);
+    }
+
+    public void adicionar(Horario horario){
+
+    }
+
+    public void remover(Horario horario){
+
+    }
+
+    public void abrir(Sala sala){
+
+    }
+
+    public void fechar(Sala sala){
+
     }
 }

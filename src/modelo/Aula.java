@@ -10,6 +10,7 @@ public class Aula extends Identificador{
     private Professor professor;
     private LinkedList<Aluno> alunos;
     private Horario horario;
+    private Sala sala;
 
     //construtor
     public Aula(String nome, long numero, Horario horario){
@@ -132,5 +133,16 @@ public class Aula extends Identificador{
         sumario = sb.toString();
         */
         sumario.append(linha).append("\n");
+    }
+
+    public Sala getSala(){
+        return sala;
+    }
+
+    public void setSala(Sala sala){
+        this.sala = sala;
+    }
+    public void desassociarSala(){
+
     }
 }

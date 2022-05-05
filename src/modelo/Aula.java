@@ -13,8 +13,8 @@ public class Aula extends Identificador{
     private Sala sala;
 
     //construtor
-    public Aula(String nome, long numero, Horario horario){
-        this(nome, numero, null, null, new LinkedList<>());
+    public Aula(String nome, long numero, Horario horario, Sala sala){
+        this(nome, numero, null, sala, null, new LinkedList<>());
         /*this.nome = nome;
         this.numero = numero;
         //this.sumario ="";
@@ -24,11 +24,13 @@ public class Aula extends Identificador{
          */
     }
 
-    public Aula(String nome, long numero, Horario horario, Professor professor, LinkedList<Aluno> alunos){
+    public Aula(String nome, long numero, Horario horario, Sala sala, Professor professor, LinkedList<Aluno> alunos){
         //this.nome = nome;
         //this.numero = numero;
         super(nome, numero);
         this.horario = horario;
+        //this.sala = sala;
+        setSala(sala);
         this.sumario = new StringBuilder();
         //this.professor = professor;
         setProfessor(professor);
@@ -140,9 +142,24 @@ public class Aula extends Identificador{
     }
 
     public void setSala(Sala sala){
-        this.sala = sala;
-    }
-    public void desassociarSala(){
+        if(sala == null || this.sala == sala){
+            return;
+        }
+        //ver se o segurança já tinha gabinete
+        if (this.sala != null){
+            this.sala.remover(this);
+        }
 
+        this.sala = sala;
+        sala.adicionar(this);
+    }
+
+    public void desassociarSala(){
+        if (sala == null){
+            return;
+        }
+        Sala salaAremover = sala;
+        sala = null;
+        salaAremover.remover(this);
     }
 }

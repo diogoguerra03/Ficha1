@@ -1,7 +1,11 @@
+import modelo.*;
+
+import java.util.LinkedList;
+
 public class Main {
 
     public Main() {
-        /*
+
         GabineteProfessor gabineteProfessorA1 = new GabineteProfessor("Gabinete Professor - A.1", false);
         GabineteProfessor gabineteProfessorD1 = new GabineteProfessor("Gabinete Professor - D.1", true);
 
@@ -93,9 +97,10 @@ public class Main {
         }
 
         // Exemplo de um cast sem verificação de Descritor para GabineteSeguranca
-        GabineteSeguranca gabineteSeguranca = (GabineteSeguranca) descritores.get(0);
+
+        // GabineteSeguranca gabineteSeguranca = (GabineteSeguranca) descritores.get(0);
         // Ocorre um problema, visto que na primeira posição da lista está um GabineteProfessor
-        */
+
     }
 
     public static void main(String[] args) {

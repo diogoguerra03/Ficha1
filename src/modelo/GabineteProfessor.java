@@ -7,6 +7,7 @@ public class GabineteProfessor extends Divisao{
 
     public GabineteProfessor(String nome, boolean portaAberta) {
         super(nome, portaAberta);
+        professores = new LinkedList<>();
     }
 
     public LinkedList<Professor> getProfessores(){
@@ -17,12 +18,20 @@ public class GabineteProfessor extends Divisao{
         return null;
     }
 
-    public void remover(Aula aula){
-
+    public void remover(Professor professor){
+        if (!professores.contains(professor)){
+            return;
+        }
+        professores.remove(professor);
+        professor.desassociarGabinete();
     }
 
-    public void adicionar(Aula aula){
-
+    public void adicionar(Professor professor){
+        if (professor == null || professores.contains(professor)){
+            return;
+        }
+        professores.add(professor);
+        professor.setGabinete(this);
     }
 
 }

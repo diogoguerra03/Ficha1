@@ -2,7 +2,7 @@ package modelo;
 
 import java.util.LinkedList;
 
-public class Sala extends Divisao {
+public class Sala extends Divisao implements RepositorioAulas{
     private LinkedList<Aula> aulas;
 
     public Sala(String nome, boolean portaAberta) {
@@ -10,10 +10,12 @@ public class Sala extends Divisao {
         aulas = new LinkedList<Aula>();
     }
 
+    @Override
     public LinkedList<Aula> getAulas() {
         return new LinkedList<>(aulas);
     }
 
+    @Override
     public LinkedList<Aula> getAulas(Horario horario){
         LinkedList<Aula> aulasAux = new LinkedList<>();
         for (Aula aula: aulas) {
@@ -24,6 +26,7 @@ public class Sala extends Divisao {
         return aulasAux;
     }
 
+    @Override
     public void adicionar(Aula aula){
         if(aula == null || aulas.contains(aula)){
             return;
@@ -32,6 +35,7 @@ public class Sala extends Divisao {
         aula.setSala(this);
     }
 
+    @Override
     public void remover(Aula aula){
         if (!aulas.contains(aula)){
             return;

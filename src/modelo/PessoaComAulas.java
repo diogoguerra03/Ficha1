@@ -2,7 +2,7 @@ package modelo;
 
 import java.util.LinkedList;
 
-public abstract class PessoaComAulas extends Pessoa {
+public abstract class PessoaComAulas extends Pessoa implements RepositorioAulas{
     //atributos
     protected LinkedList<Aula> aulas;
 
@@ -11,11 +11,13 @@ public abstract class PessoaComAulas extends Pessoa {
         this.aulas = new LinkedList<>();
     }
 
+    @Override
     public LinkedList<Aula> getAulas() {
         //return aulas
         return new LinkedList<>(aulas);
     }
 
+    @Override
     public LinkedList<Aula> getAulas(Horario horario) {
         //criar uma nova lista auxiliar
         LinkedList<Aula> listAuxiliar = new LinkedList<>();
@@ -33,6 +35,7 @@ public abstract class PessoaComAulas extends Pessoa {
         aula.adicionarLinhaSumario(nome);
     }
 
+    @Override
     public void adicionar(Aula aula) {
         if (aula == null || this.aulas.contains(aula)) {
             return;
@@ -43,10 +46,7 @@ public abstract class PessoaComAulas extends Pessoa {
         associar(aula);
     }
 
-    protected abstract void associar(Aula aula);
-    protected abstract void desassociar(Aula aula);
-    protected abstract void escreverSumario(Aula aula);
-
+    @Override
     public void remover(Aula aula) {
         if (!this.aulas.contains(aula)) {
             return;
@@ -56,6 +56,10 @@ public abstract class PessoaComAulas extends Pessoa {
         //desassociar a pessoa da aula
         desassociar(aula);
     }
+
+    protected abstract void associar(Aula aula);
+    protected abstract void desassociar(Aula aula);
+    protected abstract void escreverSumario(Aula aula);
 
     public void preencherSumario(Aula aula) {
         if (!aulas.contains(aula)) {

@@ -11,4 +11,6 @@ public interface RepositorioAulas {
     void adicionar(Aula aula);
 
     void remover(Aula aula);
+
+    boolean contem(Aula aula);
 }

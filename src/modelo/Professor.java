@@ -2,7 +2,7 @@ package modelo;
 
 import java.util.LinkedList;
 
-public class Professor extends PessoaComAulas {
+public class Professor extends PessoaComAulas implements Funcionario {
     private GabineteProfessor gabinete;
     private LinkedList<Horario> horariosAtendimento;
 
@@ -22,7 +22,7 @@ public class Professor extends PessoaComAulas {
     }
 
     @Override
-    protected void desassociar(Aula aula) {
+    public void desassociar(Aula aula) {
         aula.desassociarProfessor();
     }
 
@@ -60,6 +60,7 @@ public class Professor extends PessoaComAulas {
         gabinete.adicionar(this);
     }
 
+    @Override
     public void desassociarGabinete(){
         if (gabinete == null){
             return;
@@ -71,10 +72,16 @@ public class Professor extends PessoaComAulas {
         gabineteAremover.remover(this);
     }
 
+    @Override
+    public LinkedList<Horario> getHorariosAtendimento() {
+        return new LinkedList<>(horariosAtendimento);
+    }
+
     public LinkedList<Horario> getHorarioAtendimento(){
         return new LinkedList<>(horariosAtendimento);
     }
 
+    @Override
     public void adicionar(Horario horario){
         if(horario == null || horariosAtendimento.contains(horario)){
             return;
@@ -82,8 +89,9 @@ public class Professor extends PessoaComAulas {
         horariosAtendimento.add(horario);
     }
 
+    @Override
     public void remover(Horario horario){
-
+        horariosAtendimento.remove(horario);
     }
 
     public void abrir(Sala sala){
@@ -102,12 +110,15 @@ public class Professor extends PessoaComAulas {
         sala.fechar();
     }
 
+    @Override
     public void abrirGabinete(){
         if(gabinete == null || !gabinete.isPortaAberta()){
             return;
         }
         gabinete.abrir();
     }
+
+    @Override
     public void fecharGabinete() {
         if(gabinete == null || !gabinete.isPortaAberta()){
             return;

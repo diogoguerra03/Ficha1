@@ -2,24 +2,31 @@ package modelo;
 
 import java.util.LinkedList;
 
-public abstract class PessoaComAulas extends Pessoa implements RepositorioAulas{
+public abstract class PessoaComAulas extends Pessoa implements RepositorioAulas, AssociavelAulas{
     //atributos
-    protected LinkedList<Aula> aulas;
+    //protected LinkedList<Aula> aulas;
+
+    protected GestorAulas gestorAulas;
 
     public PessoaComAulas(String nome, long numero) {
         super(nome, numero);
-        this.aulas = new LinkedList<>();
+        //this.aulas = new LinkedList<>();
+        gestorAulas = new GestorAulas(this);
     }
 
     @Override
     public LinkedList<Aula> getAulas() {
         //return aulas
-        return new LinkedList<>(aulas);
+        //return new LinkedList<>(aulas);
+        return gestorAulas.getAulas();
     }
 
     @Override
     public LinkedList<Aula> getAulas(Horario horario) {
-        //criar uma nova lista auxiliar
+
+        return gestorAulas.getAulas(horario);
+
+       /* //criar uma nova lista auxiliar
         LinkedList<Aula> listAuxiliar = new LinkedList<>();
 
         for (Aula aula : this.aulas) {
@@ -29,14 +36,16 @@ public abstract class PessoaComAulas extends Pessoa implements RepositorioAulas{
         }
         //devolver uma lista de aulas
         return listAuxiliar;
-    }
 
-    protected void assinarSumario(Aula aula) {
-        aula.adicionarLinhaSumario(nome);
+        */
     }
 
     @Override
     public void adicionar(Aula aula) {
+
+        gestorAulas.adicionar(aula);
+
+        /*
         if (aula == null || this.aulas.contains(aula)) {
             return;
         }
@@ -44,29 +53,42 @@ public abstract class PessoaComAulas extends Pessoa implements RepositorioAulas{
         this.aulas.add(aula);
         //associar a pessoa à aula
         associar(aula);
+
+         */
     }
+
+    //  protected abstract void associar(Aula aula);
+    //  protected abstract void desassociar(Aula aula);
+    protected abstract void escreverSumario(Aula aula);
 
     @Override
     public void remover(Aula aula) {
-        if (!this.aulas.contains(aula)) {
+       gestorAulas.remover(aula);
+       /* if (!this.aulas.contains(aula)) {
             return;
         }
         //remover a aula da lista
         this.aulas.remove(aula);
         //desassociar a pessoa da aula
         desassociar(aula);
+
+        */
     }
 
-    protected abstract void associar(Aula aula);
-    protected abstract void desassociar(Aula aula);
-    protected abstract void escreverSumario(Aula aula);
+    protected void assinarSumario(Aula aula) {
+        aula.adicionarLinhaSumario(nome);
+    }
 
     public void preencherSumario(Aula aula) {
-        if (!aulas.contains(aula)) {
+        if (!contem(aula)) {
             return;
         }
         //escrever o seu sumário
         escreverSumario(aula);
     }
 
+    @Override
+    public boolean contem(Aula aula) {
+        return gestorAulas.contem(aula);
+    }
 }

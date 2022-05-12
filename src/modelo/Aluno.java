@@ -16,7 +16,7 @@ public class Aluno extends PessoaComAulas {
     }
 
     @Override
-    protected void desassociar(Aula aula) {
+    public void desassociar(Aula aula) {
         aula.remover(this);
     }
 

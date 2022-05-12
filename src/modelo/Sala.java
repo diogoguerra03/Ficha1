@@ -2,45 +2,49 @@ package modelo;
 
 import java.util.LinkedList;
 
-public class Sala extends Divisao implements RepositorioAulas{
-    private LinkedList<Aula> aulas;
+public class Sala extends Divisao implements RepositorioAulas, AssociavelAulas{
+    //private LinkedList<Aula> aulas;
+    private GestorAulas gestorAulas;
 
     public Sala(String nome, boolean portaAberta) {
         super(nome, portaAberta);
-        aulas = new LinkedList<Aula>();
+        //aulas = new LinkedList<Aula>();
+        gestorAulas = new GestorAulas(this);
     }
 
     @Override
     public LinkedList<Aula> getAulas() {
-        return new LinkedList<>(aulas);
+        //return new LinkedList<>(aulas);
+        return gestorAulas.getAulas();
     }
 
     @Override
     public LinkedList<Aula> getAulas(Horario horario){
-        LinkedList<Aula> aulasAux = new LinkedList<>();
-        for (Aula aula: aulas) {
-            if (aula.getHorario().isSobre(horario)){
-                aulasAux.add(aula);
-            }
-        }
-        return aulasAux;
+        return gestorAulas.getAulas(horario);
     }
 
     @Override
     public void adicionar(Aula aula){
-        if(aula == null || aulas.contains(aula)){
-            return;
-        }
-        aulas.add(aula);
-        aula.setSala(this);
+        gestorAulas.adicionar(aula);
     }
 
     @Override
     public void remover(Aula aula){
-        if (!aulas.contains(aula)){
-            return;
-        }
-        aulas.remove(aula);
+        gestorAulas.remover(aula);
+    }
+
+    @Override
+    public boolean contem(Aula aula){
+        return false;
+    }
+
+    @Override
+    public void associar(Aula aula) {
+        aula.setSala(this);
+    }
+
+    @Override
+    public void desassociar(Aula aula) {
         aula.desassociarSala();
     }
 }

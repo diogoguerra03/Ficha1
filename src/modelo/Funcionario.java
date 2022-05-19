@@ -2,8 +2,8 @@ package modelo;
 
 import java.util.LinkedList;
 
-public interface Funcionario {
-    void desassociarGabinete();
+public interface Funcionario<TGabinete extends Gabinete,
+        TDivisao extends Divisao>{
 
     LinkedList<Horario> getHorariosAtendimento();
 
@@ -11,7 +11,17 @@ public interface Funcionario {
 
     void remover(Horario horario);
 
+    void desassociarGabinete();
+
     void abrirGabinete();
 
     void fecharGabinete();
+
+    TGabinete getGabinete();
+
+    void setGabinete(TGabinete gabinete);
+
+    void abrir(TDivisao divisao);
+    void fechar(TDivisao divisao);
+
 }

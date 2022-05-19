@@ -20,7 +20,7 @@ public class Gabinete<TFuncionario extends Funcionario> extends Divisao{
             return;
         }
         funcionarios.add(funcionario);
-        //funcionarios.setGabinete(this);
+        funcionario.setGabinete(this);
     }
 
     public void remover(TFuncionario funcionario){

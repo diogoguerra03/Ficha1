@@ -4,13 +4,13 @@ import java.util.LinkedList;
 
 public class Seguranca extends Pessoa implements Funcionario {
     private GabineteSeguranca gabinete;
-    private LinkedList<Horario> horariosAtendimento;
+    private GestorFuncionario gestorFuncionario;
 
     public Seguranca(String nome, long numero, GabineteSeguranca gabinete) {
         super(nome, numero);
         //this.gabinete = gabinete;
         setGabinete(gabinete);
-        horariosAtendimento = new LinkedList<>();
+        gestorFuncionario = new GestorFuncionario();
     }
 
     public GabineteSeguranca getGabinete() {
@@ -44,19 +44,16 @@ public class Seguranca extends Pessoa implements Funcionario {
 
     @Override
     public LinkedList<Horario> getHorariosAtendimento(){
-        return new LinkedList<>(horariosAtendimento);
+        return gestorFuncionario.getHorariosAtendimento();
     }
 
     @Override
     public void adicionar(Horario horario){
-        if(horario == null || horariosAtendimento.contains(horario)){
-            return;
-        }
-        horariosAtendimento.add(horario);
+        gestorFuncionario.adicionar(horario);
     }
     @Override
     public void remover(Horario horario){
-        horariosAtendimento.remove(horario);
+        gestorFuncionario.remover(horario);
     }
 
     public void abrir(Divisao divisao){

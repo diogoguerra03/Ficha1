@@ -10,8 +10,9 @@ public class Seguranca extends Pessoa
     public Seguranca(String nome, long numero, GabineteSeguranca gabinete) {
         super(nome, numero);
         //this.gabinete = gabinete;
-        setGabinete(gabinete);
+
         gestorFuncionario = new GestorFuncionario(this);
+        setGabinete(gabinete);
     }
 
     @Override
